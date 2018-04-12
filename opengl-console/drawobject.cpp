@@ -5,14 +5,6 @@ drawobject::drawobject()
 {
 }
 
-void drawobject::init_data(const GLfloat *v, const GLuint num_v, const GLuint *e, const GLuint num_e)
-{
-	vertexs = v;
-	num_vertex = num_v;
-	elements = e;
-	num_element = num_e;
-}
-
 drawobject::~drawobject()
 {
 	//unload();
@@ -24,7 +16,8 @@ drawobject::~drawobject()
 	//delete &rotation;
 }
 
-GLboolean drawobject::load()
+GLboolean drawobject::load_data(const GLfloat* vertexs, const GLuint num_vertex, const GLuint* elements,
+                                const GLuint num_element)
 {
 	if (vertexs == nullptr || elements == nullptr)
 	{
@@ -37,7 +30,7 @@ GLboolean drawobject::load()
 	glBufferStorage(GL_ARRAY_BUFFER, num_vertex, vertexs, 0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
 	glEnableVertexAttribArray(0);
-	
+
 	glGenBuffers(1, ebo);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo[0]);
 	glBufferStorage(GL_ELEMENT_ARRAY_BUFFER, num_element, elements, 0);
@@ -50,8 +43,8 @@ GLboolean drawobject::load()
 void drawobject::unload()
 {
 	glDeleteBuffers(1, vao);
-	//glDeleteBuffers(buff_id::num, buff);
-
+	glDeleteBuffers(1, vbo);
+	glDeleteBuffers(1, ebo);
 	loaded = GL_FALSE;
 }
 
@@ -59,14 +52,7 @@ GLboolean drawobject::draw(const bool auto_load)
 {
 	if (!loaded)
 	{
-		if (auto_load)
-		{
-			load();
-		}
-		else
-		{
-			return GL_FALSE;
-		}
+		return GL_FALSE;
 	}
 	glBindVertexArray(vao[0]);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo[0]);
