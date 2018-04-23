@@ -72,8 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\Cpp_Workspace\OpenglLearning\lib\glfw\include;$(IncludePath)</IncludePath>
-    <OutDir>E:\Cpp_Workspace\OpenglLearning\bin\</OutDir>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <OutDir>E:\Cpp_Workspace\HuaJ\bin</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -92,16 +92,16 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>E:\Cpp_Workspace\OpenglLearning\include;E:\Cpp_Workspace\OpenglLearning\lib\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\Cpp_Workspace\HuaJ\include;E:\Cpp_Workspace\HuaJ\lib\glfw\include;E:\Cpp_Workspace\HuaJ\lib\glm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <OpenMPSupport>true</OpenMPSupport>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>..\lib\vermilion_d.lib;opengl32.lib;glu32.lib;glfw3_d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\lib\vermilion_d.lib;opengl32.lib;glu32.lib;glfw3_d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;cg.lib;cgGL.lib</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <AdditionalLibraryDirectories>E:/Cpp_Workspace/OpenglLearning/lib;E:/Cpp_Workspace/OpenglLearning/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>E:\Cpp_Workspace\HuaJ\lib;E:\Cpp_Workspace\HuaJ\opengl-console;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -160,6 +160,7 @@
     <ClInclude Include="drawobject.h" />
     <ClInclude Include="gl_window.h" />
     <ClInclude Include="guid.h" />
+    <ClInclude Include="matrix4.h" />
     <ClInclude Include="quaternion.h" />
     <ClInclude Include="singleton.h" />
     <ClInclude Include="stdafx.h" />
@@ -172,6 +173,7 @@
     <ClCompile Include="drawmanage.cpp" />
     <ClCompile Include="drawobject.cpp" />
     <ClCompile Include="gl_window.cpp" />
+    <ClCompile Include="matrix4.cpp" />
     <ClCompile Include="opengl_console.cpp" />
     <ClCompile Include="quaternion.cpp" />
     <ClCompile Include="singleton.cpp" />

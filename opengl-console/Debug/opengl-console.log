@@ -1,3 +1,4 @@
-﻿  opengl_console.cpp
+﻿F:\VS2017\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+  drawobject.cpp
 c1xx : warning C4199: C++/CLI、C++/CX 或 OpenMP 不支持两阶段名称查找；请使用 /Zc:twoPhase-
-  opengl-console.vcxproj -> E:\Cpp_Workspace\OpenglLearning\bin\opengl-console.exe
+  opengl-console.vcxproj -> E:\Cpp_Workspace\HuaJ\bin\opengl-console.exe

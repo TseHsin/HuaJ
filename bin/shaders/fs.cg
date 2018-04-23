@@ -1,0 +1,5 @@
+
+float4 fs_main( float4 color    : COLOR ) : COLOR
+{
+      return color;
+}
