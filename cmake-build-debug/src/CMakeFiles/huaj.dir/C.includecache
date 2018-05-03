@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/GL3/gl3w.h
+GL/glcorearb.h
+-
+
+/home/chenzexin/Documents/Workspace/HuaJ/lib/gl3w.c
+GL3/gl3w.h
+/home/chenzexin/Documents/Workspace/HuaJ/lib/GL3/gl3w.h
+windows.h
+-
+Carbon/Carbon.h
+-
+dlfcn.h
+-
+GL/glx.h
+-
+
