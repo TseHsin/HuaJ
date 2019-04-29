@@ -1,1 +1,1 @@
-# MyOpenGL
+# Just a demo
